@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .container 
+    h1 File Upload
+    if(typeof (msg) != 'undefined')
+      h1 
+        = msg
+    form(action='/users/' method='post' enctype='multipart/form-data')
+      .file-field.input-field
+        .btn.grey
+          span File
+          input(type='file' name='filename')
+          //- input(type='file' name='myimage')
+        .file-path-wrapper
+          input.file-path.validate(type='text')
+      button(type='submit' value='upload' class='btn') Submit
+        
+
+
